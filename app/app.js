@@ -222,6 +222,11 @@ angular.module('craypal').controller('main', function($scope, Papa, $timeout)
                 }
             }
         });
+        if ($scope.dateFormat === undefined || $scope.dateFormat === '')
+        {
+            const separator = '/';
+            $scope.dateFormat = 'DD' + separator + 'MM' + separator + 'YYYY'
+        }
         $scope.data = result.data;
         $scope.$digest();
     };
